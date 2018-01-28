@@ -20,3 +20,8 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
+task runClient(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = "com.fei_ke.nettyclient.NettyClient"
+}

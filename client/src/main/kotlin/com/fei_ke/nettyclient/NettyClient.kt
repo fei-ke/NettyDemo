@@ -12,6 +12,12 @@ import io.netty.channel.socket.nio.NioSocketChannel
 
 
 class NettyClient {
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            NettyClient().run()
+        }
+    }
 
     @Throws(Exception::class)
     fun run() {
@@ -39,8 +45,4 @@ class NettyClient {
             workerGroup.shutdownGracefully()
         }
     }
-}
-
-fun main(args: Array<String>) {
-    NettyClient().run()
 }
